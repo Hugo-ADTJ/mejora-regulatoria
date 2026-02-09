@@ -1,0 +1,408 @@
+:root {
+  /* Mejora Regulatoria - Ayuntamiento de Tijuana - Paleta Institucional */
+  /* Colores Principales */
+  --institutional-wine: #750D2F;
+  --institutional-gold: #BA945C;
+  --institutional-gray: #383838;
+  
+  /* Colores Complementarios */
+  --institutional-red: #912240;
+  --institutional-green: #01302B;
+  --institutional-green-sec: #225B4F;
+  --institutional-cream: #E3CFA7;
+  --institutional-neutral: #F2F2F2;
+  --institutional-black: #121212;
+
+  --white: #FFFFFF;
+  
+  /* Variables semánticas */
+  --background: #FFFFFF;
+  --foreground: #383838;
+  --card: #FFFFFF;
+  --card-foreground: #383838;
+  --popover: #FFFFFF;
+  --popover-foreground: #383838;
+  
+  --primary: #750D2F; /* Guinda Institucional */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #BA945C; /* Oro Corporativo */
+  --secondary-foreground: #01302B;
+  
+  --muted: #F2F2F2;
+  --muted-foreground: #383838; /* Gris Oscuro para texto secundario */
+  
+  --accent: #BA945C;
+  --accent-foreground: #121212;
+  
+  --destructive: #912240;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #750D2F;
+  
+  --radius: 0.5rem;
+  
+  --font-sans: "ITC Avant Garde Gothic Std", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --card: #262626;
+  --card-foreground: #ffffff;
+  --popover: #262626;
+  --popover-foreground: #ffffff;
+  --primary: #bb945b; /* Dorado en dark mode para contraste */
+  --primary-foreground: #0f302a;
+  --secondary: #0f302a;
+  --secondary-foreground: #ffffff;
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+  --accent: #750330;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #404040;
+  --input: #404040;
+  --ring: #bb945b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Reset global de listas - sin decoración por defecto */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Grid system */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+/* Spacing */
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+/* Text sizes */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+}
+
+@media (max-width: 768px) {
+  .text-7xl {
+    font-size: 3rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.25rem;
+  }
+}
+
+/* Font weights */
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Colors */
+.text-foreground {
+  color: var(--foreground);
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-foreground {
+  color: var(--primary-foreground);
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-muted {
+  background-color: var(--muted);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-primary-foreground {
+  background-color: var(--primary-foreground);
+}
+
+/* Border */
+.border {
+  border: 1px solid var(--border);
+}
+
+.border-b {
+  border-bottom: 1px solid var(--border);
+}
+
+.border-t {
+  border-top: 1px solid var(--border);
+}
+
+.rounded-lg {
+  border-radius: var(--radius);
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Opacity */
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* Leading */
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+/* Transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.hover-foreground:hover {
+  color: var(--foreground);
+}
+
+.hover-opacity-100:hover {
+  opacity: 1;
+}
+
+/* Scroll animations - Intersection Observer based (optimized) */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale3d(0.95, 0.95, 1);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Elementos inician ocultos */
+[data-animate] {
+  opacity: 0;
+}
+
+/* Animaciones aplicadas cuando el elemento es visible */
+[data-animate="fade-up"].is-visible {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+[data-animate="fade"].is-visible {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+[data-animate="scale"].is-visible {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+/* Delays escalonados para múltiples elementos */
+[data-animate].is-visible:nth-child(1) { animation-delay: 0ms; }
+[data-animate].is-visible:nth-child(2) { animation-delay: 100ms; }
+[data-animate].is-visible:nth-child(3) { animation-delay: 200ms; }
+[data-animate].is-visible:nth-child(4) { animation-delay: 300ms; }
+[data-animate].is-visible:nth-child(5) { animation-delay: 400ms; }
+[data-animate].is-visible:nth-child(6) { animation-delay: 500ms; }
+
+/* Fallback - Si JS no carga, mostrar contenido */
+.no-js [data-animate] {
+  opacity: 1;
+}

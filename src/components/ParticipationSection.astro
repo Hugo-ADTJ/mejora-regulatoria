@@ -1,0 +1,205 @@
+---
+---
+
+<section id="participación" class="participation-section">
+   <div class="participation-container">
+      <div class="participation-content">
+        <h2 class="participation-title">Participación Ciudadana</h2>
+        <p class="participation-description">La opinión de la ciudadanía es fundamental para mejorar los trámites y servicios. Aquí puedes:</p>
+        <ul class="participation-list">
+          <li>• Enviar comentarios sobre agendas regulatorias</li>
+          <li>• Presentar propuestas de simplificación</li>
+          <li>• Reportar irregularidades</li>
+          <li>• Dar seguimiento a tus trámites</li>
+        </ul>
+        <div class="participation-actions">
+           <button class="btn-primary">
+              Participa en la Mejora Regulatoria 
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+           </button>
+        </div>
+      </div>
+      <svg class="globe-icon" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+   </div>
+</section>
+
+<style>
+  .participation-section {
+    padding: 8rem 1.5rem;
+  }
+
+  .participation-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    background-color: #750D2F;
+    border-radius: 4rem;
+    padding: 2.5rem 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @media (min-width: 640px) {
+    .participation-container {
+      padding: 3rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .participation-container {
+      padding: 6rem;
+    }
+  }
+
+  .participation-content {
+    max-width: 40rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .participation-overline {
+    font-size: 0.875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #BA945C;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .participation-overline {
+      font-size: 1rem;
+    }
+  }
+
+  .participation-title {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .participation-title {
+      font-size: 2.5rem;
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .participation-title {
+      font-size: 3.5rem;
+    }
+  }
+
+  .participation-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .participation-description {
+      font-size: 1.125rem;
+    }
+  }
+
+  .participation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+  }
+
+  .participation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    background-color: white;
+    color: #750D2F;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    min-height: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .btn-primary {
+      padding: 1.25rem 2.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .btn-primary:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .btn-primary:active {
+    transform: scale(0.97);
+    background-color: #f9f9f9;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-height: 48px;
+  }
+
+  @media (min-width: 640px) {
+    .btn-secondary {
+      padding: 1.25rem 2.5rem;
+      font-size: 1rem;
+      border-width: 1px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .btn-secondary:active {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .globe-icon {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .globe-icon {
+      display: block;
+      position: absolute;
+      bottom: -5rem;
+      right: -5rem;
+      color: rgba(255, 255, 255, 0.03);
+    }
+  }
+</style>

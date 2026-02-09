@@ -1,0 +1,164 @@
+---
+const objectives = [
+  "La innovación y el desarrollo económico",
+  "La confianza ciudadana y empresarial",
+  "La productividad y competitividad",
+  "El bienestar general y el desarrollo humano"
+];
+---
+
+<section id="que-es" class="about-section">
+  <div class="about-container">
+    <div class="section-header">
+      <h2 class="section-title">¿Qué es la Mejora Regulatoria?</h2>
+    </div>
+
+    <div class="about-content">
+      <div class="about-description">
+        <p class="description-text">
+          Mejora Regulatoria es la política pública orientada a garantizar que las normas, trámites y servicios del Municipio de Tijuana sean claros, simples, digitales y accesibles para todas las personas.
+        </p>
+        <p class="description-text">
+          Su objetivo es reducir cargas administrativas innecesarias, eliminar trámites burocráticos obsoletos y promover instituciones eficientes, con el fin de generar mayores beneficios sociales al menor costo posible, impulsando:
+        </p>
+      </div>
+
+      <h3 class="objectives-heading" style="font-size: 1.5rem; font-weight: 700; color: #750D2F; margin-bottom: 1rem;">Áreas de Impacto</h3>
+      
+      <ol class="objectives-grid">
+        {objectives.map((objective, i) => (
+          <li class="objective-item">
+            <span class="objective-number">{i + 1}</span>
+            <p class="objective-text">{objective}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="about-footer">
+        <p class="footer-text">
+          En el Municipio de Tijuana, la Mejora Regulatoria se alinea con la <strong class="law-highlight">Ley Nacional para Eliminar Trámites Burocráticos</strong> y con los principios de simplificación, digitalización, transparencia y gobierno abierto.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 8rem 1.5rem;
+    background-color: #F9F9F9;
+  }
+
+  .about-container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 5rem;
+  }
+
+  .section-overline {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #BA945C;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #121212;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #383838;
+  }
+
+  @media (min-width: 768px) {
+    .description-text {
+      font-size: 1.125rem;
+    }
+  }
+
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 640px) {
+    .objectives-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .objective-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .objective-number {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: #BA945C;
+    flex-shrink: 0;
+  }
+
+  .objective-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #121212;
+    line-height: 1.5;
+  }
+
+  .about-footer {
+    padding: 2rem 0;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #383838;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-text {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-text strong {
+    color: #750D2F;
+    font-weight: 700;
+  }
+</style>

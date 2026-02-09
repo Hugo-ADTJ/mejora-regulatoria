@@ -1,0 +1,233 @@
+---
+---
+
+<section id="inicio" class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text-block">
+        <div class="hero-overline">
+          <span class="overline-line"></span>
+          <span class="overline-text">Mejora Regulatoria</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Gobierno <span class="highlight">Eficiente</span>
+        </h1>
+        
+        <p class="hero-description">
+          Transformamos la administración pública de Tijuana para que sea clara, digital y accesible. Menos burocracia, más resultados.
+        </p>
+      </div>
+
+      <div class="hero-actions-block">
+        <img 
+          src="/escudo_de_tijuana.svg" 
+          alt="Escudo oficial del Ayuntamiento de Tijuana - Mejora Regulatoria" 
+          class="legislation-image" 
+          width="500" 
+          height="500"
+          loading="eager"
+          decoding="async"
+          draggable="false" 
+        />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Blurry gradient decoration -->
+  <div class="hero-gradient"></div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 10rem;
+    padding-bottom: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: #FFFFFF;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding-top: 12rem;
+    }
+  }
+
+  .hero-gradient {
+    position: absolute;
+    top: -5%;
+    right: -5%;
+    width: 70%;
+    height: 85%;
+    background: radial-gradient(ellipse at top right, 
+      rgba(186, 148, 92, 0.5) 0%, 
+      rgba(186, 148, 92, 0.35) 12%,
+      rgba(145, 34, 64, 0.4) 35%, 
+      rgba(117, 13, 47, 0.3) 55%, 
+      rgba(117, 13, 47, 0) 75%);
+    filter: blur(55px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero-gradient {
+      filter: blur(70px);
+      width: 80%;
+      height: 95%;
+    }
+  }
+
+  .hero-wave svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-wave svg {
+    width: 100%;
+    padding-bottom: 8rem;
+    position: relative;
+    z-index: 1
+  }
+
+  .hero-container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding-bottom: 10rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .hero-content {
+      flex-direction: row;
+      padding-bottom: 12rem;
+    }
+  }
+
+  /* Left Side */
+  .hero-text-block {
+    max-width: 48rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .hero-text-block {
+      text-align: left;
+    }
+  }
+
+  .hero-overline {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .overline-line {
+    width: 3rem;
+    height: 1px;
+    background-color: #BA945C;
+  }
+
+  .overline-text {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #BA945C;
+  }
+
+  @media (min-width: 768px) {
+    .overline-text {
+      font-size: 1rem;
+    }
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+    color: #121212;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .hero-title {
+      font-size: 4.5rem;
+      line-height: 0.9;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 6rem;
+    }
+  }
+
+  .highlight {
+    color: #750D2F;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    color: rgba(56, 56, 56, 0.7);
+    line-height: 1.625;
+    max-width: 36rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-description {
+      font-size: 1.25rem;
+    }
+  }
+
+  /* Right Side */
+  .hero-actions-block {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .hero-actions-block {
+      display: block;
+    }
+  }
+
+  .legislation-image {
+    width: 280px;
+    height: auto;
+    filter: grayscale(100%);
+  }
+
+  @media (min-width: 640px) {
+    .legislation-image {
+      width: 350px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .legislation-image {
+      width: 500px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .legislation-image {
+      width: 500px;
+    }
+  }
+</style>

@@ -1,0 +1,212 @@
+---
+import FAQSchema from './FAQSchema.astro';
+
+const faqs = [
+  {
+    question: '¿Qué es un trámite?',
+    answer: 'Gestión que debe realizar una persona ante una dependencia municipal para obtener un derecho, autorización o servicio.'
+  },
+  {
+    question: '¿Qué hago si me piden requisitos no publicados?',
+    answer: 'Puedes presentar una Protesta Ciudadana directamente en esta plataforma.'
+  },
+  {
+    question: '¿Todos los trámites serán digitales?',
+    answer: 'El Municipio avanza gradualmente hacia la digitalización total conforme a la Ley Nacional para Eliminar Trámites Burocráticos.'
+  }
+];
+---
+
+<FAQSchema faqs={faqs} />
+
+<section id="faq" class="faq-section">
+  <div class="faq-container">
+    <div class="faq-header">
+      <h2 class="faq-title">Preguntas Frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map((faq) => (
+        <div class="faq-item">
+          <button class="faq-question" data-faq-button>
+            <span class="question-text">{faq.question}</span>
+            <span class="question-icon">+</span>
+          </button>
+          <div class="faq-answer" data-faq-answer>
+            <div class="faq-answer-content">
+              <p>{faq.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const faqButtons = document.querySelectorAll('[data-faq-button]');
+  
+  faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const answer = faqItem?.querySelector('[data-faq-answer]');
+      const content = answer?.querySelector('.faq-answer-content');
+      const icon = button.querySelector('.question-icon');
+      
+      if (answer && icon && content && answer instanceof HTMLElement) {
+        const isOpen = answer.classList.contains('open');
+        
+        // Cerrar todas las respuestas
+        document.querySelectorAll('[data-faq-answer]').forEach(a => {
+          if (a instanceof HTMLElement) {
+            a.classList.remove('open');
+            a.style.height = '0';
+          }
+        });
+        document.querySelectorAll('.question-icon').forEach(i => {
+          i.classList.remove('rotated');
+        });
+        
+        // Abrir la respuesta actual si estaba cerrada
+        if (!isOpen) {
+          answer.classList.add('open');
+          answer.style.height = content.scrollHeight + 'px';
+          icon.classList.add('rotated');
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq-section {
+    padding: 8rem 1.5rem;
+    border-top: 1px solid #E5E7EB;
+  }
+
+  .faq-container {
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  .faq-header {
+    margin-bottom: 5rem;
+  }
+
+  .faq-overline {
+    font-size: 0.875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #BA945C;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .faq-overline {
+      font-size: 1rem;
+    }
+  }
+
+  .faq-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #121212;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .faq-title {
+      font-size: 3rem;
+    }
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid #E5E7EB;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: opacity 0.3s ease;
+    gap: 2rem;
+  }
+
+  .faq-question:active {
+    opacity: 0.7;
+  }
+
+  @media (min-width: 768px) {
+    .faq-question:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .question-text {
+    font-size: 1.125rem;
+    font-weight: 900;
+    color: #121212;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .question-text {
+      font-size: 1.25rem;
+    }
+  }
+
+  .question-icon {
+    font-size: 1.5rem;
+    color: #750D2F;
+    font-weight: 400;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .question-icon.rotated {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .faq-answer.open {
+    height: auto;
+  }
+
+  .faq-answer-content {
+    padding-bottom: 2rem;
+  }
+
+  .faq-answer-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #383838;
+    margin: 0;
+  }
+</style>

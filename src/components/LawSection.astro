@@ -1,0 +1,210 @@
+---
+const lawObjectives = [
+  "Eliminar trámites redundantes o sin valor público",
+  "Digitalizar y automatizar servicios gubernamentales",
+  "Reducir tiempos y costos para la ciudadanía y las empresas",
+  "Garantizar certeza jurídica y transparencia"
+];
+---
+
+<section id="ley-nacional" class="law-section">
+  <div class="law-container">
+    <div class="section-header">
+      <h2 class="section-title">Ley Nacional para Eliminar Trámites Burocráticos</h2>
+    </div>
+
+    <div class="law-content">
+      <p class="law-description">
+        La Ley Nacional para Eliminar Trámites Burocráticos establece las bases para transformar la gestión pública mediante la eliminación de requisitos innecesarios, la digitalización de procesos y la homologación de trámites en los tres órdenes de gobierno.
+      </p>
+
+      <div class="law-objectives">
+        <h3 class="objectives-subtitle">Objetivos principales de la Ley:</h3>
+        <ul class="objectives-list">
+          {lawObjectives.map((objective) => (
+            <li class="objective-item">
+              <div class="objective-bullet"></div>
+              <span class="objective-text">{objective}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="law-cta">
+        <a 
+          href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="law-button"
+        >
+          Consultar Ley Nacional para Eliminar Trámites Burocráticos
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .law-section {
+    padding: 8rem 1.5rem;
+    background-color: #FFFFFF;
+  }
+
+  .law-container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 5rem;
+  }
+
+  .section-overline {
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #BA945C;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #121212;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+
+  .law-content {
+    display: grid;
+    gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    .law-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+  }
+
+  .law-description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #383838;
+  }
+
+  @media (min-width: 768px) {
+    .law-description {
+      font-size: 1.125rem;
+    }
+  }
+
+  .law-objectives {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .objectives-subtitle {
+    font-size: 0.875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #750D2F;
+  }
+
+  .objectives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #E5E7EB;
+  }
+
+  .objective-item:last-child {
+    border-bottom: none;
+  }
+
+  .objective-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: #BA945C;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
+  .objective-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #383838;
+    font-weight: 500;
+  }
+
+  .law-cta {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .law-cta {
+      grid-column: 1 / -1;
+      justify-content: center;
+    }
+  }
+
+  .law-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.75rem;
+    background-color: #750D2F;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    min-height: 48px;
+    border: 2px solid #750D2F;
+  }
+
+  @media (min-width: 640px) {
+    .law-button {
+      padding: 1.125rem 2rem;
+      font-size: 0.9375rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .law-button:hover {
+      background-color: #5c0a25;
+      border-color: #5c0a25;
+    }
+  }
+
+  .law-button:active {
+    background-color: #5c0a25;
+    border-color: #5c0a25;
+    transform: scale(0.98);
+  }
+</style>

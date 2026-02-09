@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mejora-regulatoria.tijuana.gob.mx/sitemap-index.xml

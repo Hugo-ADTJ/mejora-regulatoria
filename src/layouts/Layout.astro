@@ -1,0 +1,124 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BaseHead from '../components/BaseHead.astro';
+import SEO from '../components/SEO.astro';
+import OrganizationSchema from '../components/OrganizationSchema.astro';
+import MobileMenuOverlay from '../components/MobileMenuOverlay.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	type?: 'website' | 'article';
+}
+
+const { 
+	title = "Mejora Regulatoria - Gobierno de Tijuana",
+	description = "Transformamos la administración pública de Tijuana para que sea clara, digital y accesible. Menos burocracia, más resultados.",
+	image,
+	type = 'website'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-MX">
+	<head>
+		<BaseHead
+			title={title}
+			description={description}
+			image={image}
+			type={type}
+		/>
+		<SEO
+			type="WebSite"
+			name="Mejora Regulatoria - Ayuntamiento de Tijuana"
+			description={description}
+		/>
+		<OrganizationSchema />
+		
+		<!-- Critical CSS inline para Above-the-Fold -->
+		<style is:inline>
+			:root {
+				--institutional-wine: #750D2F;
+				--institutional-gold: #BA945C;
+				--institutional-gray: #383838;
+				--font-sans: "ITC Avant Garde Gothic Std", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			html {
+				font-family: var(--font-sans);
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			
+			body {
+				background-color: #FFFFFF;
+				color: #383838;
+				line-height: 1.5;
+				min-height: 100vh;
+			}
+			
+			/* Critical Hero styles */
+			.hero {
+				padding-top: 10rem;
+				padding-bottom: 0;
+				padding-left: 1.5rem;
+				padding-right: 1.5rem;
+				background-color: #FFFFFF;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body class="min-h-screen bg-white text-gray-900 font-sans antialiased">
+		<!-- Skip to main content for keyboard navigation -->
+		<a href="#main-content" class="skip-to-content">
+			Saltar al contenido principal
+		</a>
+		
+		<MobileMenuOverlay />
+		<Header />
+		<main id="main-content">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	::selection {
+		background-color: #750D2F;
+		color: white;
+	}
+
+	body {
+		min-height: 100vh;
+	}
+	
+	/* Skip to content link for accessibility */
+	.skip-to-content {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		background-color: #750D2F;
+		color: white;
+		padding: 8px 16px;
+		text-decoration: none;
+		z-index: 1000;
+		font-weight: 600;
+		border-radius: 0 0 4px 0;
+		transition: top 0.2s;
+	}
+	
+	.skip-to-content:focus {
+		top: 0;
+		outline: 2px solid #BA945C;
+		outline-offset: 2px;
+	}
+</style>
