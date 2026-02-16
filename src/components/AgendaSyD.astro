@@ -1,0 +1,315 @@
+---
+const agendas: any[] = [
+  {
+    title: "Agenda de SyD - Primer semestre 2026",
+    period: "Enero – Junio 2026",
+    publishedDate: "2026-02-01",
+    fileUrl: "#",
+    commentUrl: "https://form.com",
+  },
+];
+
+const today = new Date();
+
+function isConsultationOpen(publishedDate: string | number | Date) {
+  const publication = new Date(publishedDate);
+  const closingDate = new Date(publication);
+  closingDate.setDate(closingDate.getDate() + 20);
+
+  return today <= closingDate;
+}
+---
+
+<section id="agenda-regulatoria" class="syd-agenda-section">
+  <div class="syd-agenda-container">
+    <div class="syd-agenda-header">
+      <h1 class="syd-agenda-title">
+        Agenda de Simplificación y Digitalización
+      </h1>
+    </div>
+
+    <div class="syd-agenda-content">
+      <p class="syd-agenda-description">
+        La Agenda de Simplificación y Digitalización es el instrumento de
+        planeación mediante el cual los sujetos obligados establecen las
+        acciones programadas para reducir cargas administrativas, eliminar
+        requisitos innecesarios y modernizar trámites y servicios mediante el
+        uso de herramientas digitales.
+        <br /><br />
+        Esta agenda se publica de manera semestral. La agenda presentada en enero
+        contempla las acciones previstas para el periodo enero–junio, mientras que
+        la publicada en julio corresponde al periodo julio–diciembre del mismo año.
+        <br /><br />
+        Una vez publicada, la Agenda de Simplificación y Digitalización estará disponible
+        para consulta pública por un plazo mínimo de veinte días naturales. Durante
+        este periodo, la ciudadanía, organizaciones y personas interesadas pueden
+        enviar comentarios, observaciones o propuestas relacionadas con las acciones
+        programadas.
+        <br /><br />
+        La implementación de esta agenda contribuye a promover la mejora continua,
+        la interoperabilidad institucional, la reducción de costos administrativos
+        y el fortalecimiento del gobierno digital, garantizando mayor eficiencia,
+        transparencia y accesibilidad en la prestación de trámites y servicios públicos,
+        en pleno respeto de los principios establecidos en la Ley General de Mejora
+        Regulatoria y la Ley Nacional para Eliminar Trámites Burocráticos.
+      </p>
+    </div>
+
+    {
+      Array.isArray(agendas) && agendas.length > 0 ? (
+        <div class="syd-agenda-table-wrapper">
+          <table class="syd-agenda-table">
+            <thead>
+              <tr>
+                <th>Recurso</th>
+                <th>Periodo</th>
+                <th>Fecha de publicación</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {agendas.map((agenda) => (
+                <tr>
+                  <td data-label="Recurso">
+                    <strong>{agenda.title}</strong>
+                    <br />
+                    {isConsultationOpen(agenda.publishedDate) ? (
+                      <span class="syd-badge-open">Consulta abierta</span>
+                    ) : (
+                      <span class="syd-badge-closed">Consulta cerrada</span>
+                    )}
+                  </td>
+
+                  <td data-label="Periodo">
+                    <p>{agenda.period}</p>
+                  </td>
+
+                  <td data-label="Publicación">
+                    <p>{agenda.publishedDate}</p>
+                  </td>
+
+                  <td data-label="Acciones" class="syd-agenda-actions">
+                    <a
+                      href={agenda.fileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="syd-agenda-btn-outline"
+                    >
+                      Ver documento
+                    </a>
+
+                    {agenda.commentUrl &&
+                      isConsultationOpen(agenda.publishedDate) && (
+                        <a
+                          href={agenda.commentUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="syd-agenda-btn-primary"
+                        >
+                          Enviar comentarios
+                        </a>
+                      )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <div class="syd-agenda-empty">
+          <p>Ninguna publicación disponible.</p>
+        </div>
+      )
+    }
+  </div>
+</section>
+<style>
+  .syd-agenda-section {
+    padding: 8rem 1.5rem 2rem 1.5rem;
+    background-color: #ffffff;
+  }
+
+  .syd-agenda-container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .syd-agenda-header {
+    margin-bottom: 5rem;
+  }
+
+  .syd-agenda-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #383838;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .syd-agenda-title {
+      font-size: 3rem;
+    }
+  }
+
+  .syd-agenda-content {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .syd-agenda-description {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #383838;
+  }
+
+  @media (min-width: 768px) {
+    .syd-agenda-description {
+      font-size: 1.125rem;
+    }
+  }
+
+  /* Table */
+  .syd-agenda-empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 2rem;
+    border: 1px dashed #e5e7eb;
+    border-radius: 0.75rem;
+    background-color: #fafafa;
+  }
+
+  .syd-agenda-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .syd-agenda-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .syd-agenda-table thead {
+    background-color: #750d2f;
+    color: white;
+  }
+
+  .syd-agenda-table th {
+    text-align: left;
+    padding: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .syd-agenda-table td {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+  }
+
+  .syd-agenda-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+
+  .syd-agenda-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* Botones */
+
+  .syd-agenda-btn-outline {
+    padding: 0.6rem 1rem;
+    border: 2px solid #750d2f;
+    color: #750d2f;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .syd-agenda-btn-outline:hover {
+    background-color: #750d2f;
+    color: white;
+  }
+
+  .syd-agenda-btn-primary {
+    padding: 0.6rem 1rem;
+    background-color: #750d2f;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid #750d2f;
+    transition: all 0.2s ease;
+  }
+
+  .syd-agenda-btn-primary:hover {
+    background-color: #5c0a25;
+    border-color: #5c0a25;
+  }
+
+  /* Responsive */
+
+  @media (max-width: 768px) {
+    .syd-agenda-table thead {
+      display: none;
+    }
+
+    .syd-agenda-table,
+    .syd-agenda-table tbody,
+    .syd-agenda-table tr,
+    .syd-agenda-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .syd-agenda-table tr {
+      margin-bottom: 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.75rem;
+      padding: 1rem;
+    }
+
+    .syd-agenda-table td {
+      border: none;
+      padding: 0.75rem 0;
+    }
+
+    .syd-agenda-table td::before {
+      content: attr(data-label);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #750d2f;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+  }
+  .syd-badge-open {
+    background: #e6f4ea;
+    color: #1e7d32;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .syd-badge-closed {
+    background: #fbeaea;
+    color: #a12a2a;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+</style>

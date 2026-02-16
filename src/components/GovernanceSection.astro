@@ -12,14 +12,16 @@ const cards = [
     title: "Agenda Regulatoria",
     description:
       "Conoce las propuestas de creación, modificación o eliminación de regulaciones vigentes.",
-    buttonText: "Consultar agenda y enviar comentarios",
+    buttonText: "Consultar agenda",
+    link: "/agenda-regulatoria",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>`,
   },
   {
     title: "Agenda de Simplificación y Digitalización",
     description:
       "Accede a las acciones programadas para simplificar y digitalizar trámites (publicación semestral).",
-    buttonText: "Consultar agenda y enviar comentarios",
+    buttonText: "Consultar agenda",
+    link: "/agenda-syd",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>`,
   },
   {
@@ -27,6 +29,7 @@ const cards = [
     description:
       "Herramienta para evaluar los efectos de nuevas regulaciones antes de su emisión.",
     buttonText: "Próximamente",
+    link: null,
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`,
   },
 ];
@@ -65,22 +68,29 @@ const cards = [
             <div class="card-icon" set:html={card.icon} />
             <h4 class="card-title">{card.title}</h4>
             <p class="card-description">{card.description}</p>
-            <a href="#" class="card-button">
-              {card.buttonText}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </a>
+
+            {card.link ? (
+              <a href={card.link} class="card-button">
+                {card.buttonText}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </a>
+            ) : (
+              <button class="card-button" disabled>
+                {card.buttonText}
+              </button>
+            )}
           </li>
         ))
       }
