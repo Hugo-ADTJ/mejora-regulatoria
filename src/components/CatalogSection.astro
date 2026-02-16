@@ -28,13 +28,13 @@ const items = [
     link: "https://mejore-regulatoria-prod.s3.us-east-005.backblazeb2.com/Padron_de_Inspectores.pdf",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>`,
   },
-  {
-    title: "Protesta Ciudadana",
-    desc: "Presenta una inconformidad en cuanto a trámites o servicios.",
-    buttonText: "Presentar protesta ciudadana",
-    link: "http://t-atiende.tijuana.gob.mx/",
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`,
-  },
+  // {
+  //   title: "Protesta Ciudadana",
+  //   desc: "Presenta una inconformidad en cuanto a trámites o servicios.",
+  //   buttonText: "Presentar protesta ciudadana",
+  //   link: "http://t-atiende.tijuana.gob.mx/",
+  //   icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`,
+  // },
 ];
 ---
 
@@ -56,7 +56,13 @@ const items = [
         {
           items.map((item, i) => (
             <li>
-              <a href={item.link} class="catalog-card" data-index={i}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={item.link}
+                class="catalog-card"
+                data-index={i}
+              >
                 <div class="card-icon" set:html={item.icon} />
                 <h3 class="card-title">{item.title}</h3>
                 <p class="card-desc">{item.desc}</p>
@@ -203,11 +209,11 @@ const items = [
     }
 
     .catalog-card[data-index="2"] {
-      grid-column: span 1;
+      grid-column: span 2;
     }
 
     .catalog-card[data-index="3"] {
-      grid-column: span 1;
+      grid-column: span 2;
     }
 
     .catalog-card[data-index="4"] {

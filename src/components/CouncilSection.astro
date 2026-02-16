@@ -63,7 +63,12 @@ const cards = [
                 <div class="card-icon" set:html={card.icon} />
                 <h4 class="card-title">{card.title}</h4>
                 <p class="card-description">{card.description}</p>
-                <a href={card.link} class="card-button">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={card.link}
+                  class="card-button"
+                >
                   {card.buttonText}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -9,9 +9,9 @@ import compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mejora-regulatoria.tijuana.gob.mx',
+  site: 'https://mejoraregulatoria.agenciadigitaltj.gob.mx',
   integrations: [
-    svelte(), 
+    svelte(),
     sitemap(),
     compress({
       CSS: true,

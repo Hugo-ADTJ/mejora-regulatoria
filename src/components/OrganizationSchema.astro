@@ -2,65 +2,62 @@
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "GovernmentOrganization",
-  name: "Ayuntamiento de Tijuana - Mejora Regulatoria",
-  alternateName: "XXV Ayuntamiento de Tijuana",
+
+  name: "Mejora Regulatoria del Ayuntamiento de Tijuana",
+  alternateName: "Mejora Regulatoria Tijuana",
+
   description:
-    "Dirección de Mejora Regulatoria del Municipio de Tijuana, encargada de simplificar trámites, digitalizar servicios y eliminar la burocracia innecesaria.",
-  url: "https://mejora-regulatoria.tijuana.gob.mx",
-  logo: "https://mejora-regulatoria.tijuana.gob.mx/image.png",
-  image: "https://mejora-regulatoria.tijuana.gob.mx/escudo_de_tijuana.svg",
-  telephone: "+52-664-973-7000",
-  email: "contacto@tijuana.gob.mx",
+    "Plataforma oficial del Ayuntamiento de Tijuana dedicada a la Mejora Regulatoria, simplificación administrativa, digitalización de trámites y fortalecimiento de la calidad normativa en el municipio.",
+
+  url: "https://mejoraregulatoria.agenciadigitaltj.gob.mx",
+
+  logo: "https://mejoraregulatoria.agenciadigitaltj.gob.mx/image.png",
+  image:
+    "https://mejoraregulatoria.agenciadigitaltj.gob.mx/escudo_de_tijuana.svg",
+
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Centro de Gobierno, Av. Independencia 1350",
     addressLocality: "Tijuana",
     addressRegion: "Baja California",
-    postalCode: "22010",
     addressCountry: "MX",
   },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "32.5149469",
-    longitude: "-117.0382471",
-  },
+
   areaServed: {
-    "@type": "City",
-    name: "Tijuana",
-    sameAs: "https://es.wikipedia.org/wiki/Tijuana",
+    "@type": "AdministrativeArea",
+    name: "Municipio de Tijuana, Baja California, México",
   },
+
+  parentOrganization: {
+    "@type": "GovernmentOrganization",
+    name: "Ayuntamiento de Tijuana",
+    url: "https://www.tijuana.gob.mx",
+  },
+
+  department: {
+    "@type": "GovernmentOrganization",
+    name: "Agencia Digital de Tijuana",
+    url: "https://agenciadigitaltj.gob.mx",
+  },
+
   sameAs: [
     "https://www.tijuana.gob.mx",
     "https://www.facebook.com/AyuntamientodeTijuana",
     "https://twitter.com/AytoTijuana",
     "https://www.instagram.com/aytotijuana",
   ],
-  parentOrganization: {
-    "@type": "GovernmentOrganization",
-    name: "Ayuntamiento de Tijuana",
-    url: "https://www.tijuana.gob.mx",
-  },
-  department: [
-    {
-      "@type": "GovernmentOrganization",
-      name: "Consejo de Simplificación y Digitalización",
-      description:
-        "Órgano de consulta, coordinación y vinculación encargado de impulsar la Mejora Regulatoria en Tijuana",
-    },
-  ],
+
   knowsAbout: [
     "Mejora Regulatoria",
+    "Agenda Regulatoria",
+    "Agenda de Simplificación y Digitalización",
     "Simplificación Administrativa",
     "Digitalización de Trámites",
-    "Eliminación de Burocracia",
+    "Calidad Regulatoria",
     "Catálogo de Regulaciones",
     "REMUTyS",
+    "Ley General de Mejora Regulatoria",
     "Ley Nacional para Eliminar Trámites Burocráticos",
   ],
-  serviceArea: {
-    "@type": "AdministrativeArea",
-    name: "Municipio de Tijuana, Baja California, México",
-  },
 };
 ---
 

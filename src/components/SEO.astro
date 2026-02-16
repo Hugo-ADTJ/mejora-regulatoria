@@ -7,20 +7,22 @@ interface Props {
 
 const {
   type = "WebSite",
-  name = "Mejora Regulatoria - H. Ayuntamiento de Tijuana",
-  description = "Transformando la administración pública de Tijuana para que sea clara, digital y accesible. Menos burocracia, más resultados.",
+  name = "Mejora Regulatoria del Ayuntamiento de Tijuana",
+  description = "Plataforma oficial de Mejora Regulatoria del Ayuntamiento de Tijuana enfocada en simplificación administrativa, digitalización de trámites y fortalecimiento de la calidad normativa.",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
+/* 🔹 Datos estructurados principales */
 const structuredData = {
   "@context": "https://schema.org",
   "@type": type,
   name: name,
   description: description,
   url: canonicalURL.href,
-  logo: new URL("/image.png", Astro.site).href,
   inLanguage: "es-MX",
+  logo: new URL("/image.png", Astro.site).href,
+
   ...(type === "GovernmentOrganization" && {
     address: {
       "@type": "PostalAddress",
@@ -28,13 +30,33 @@ const structuredData = {
       addressRegion: "Baja California",
       addressCountry: "MX",
     },
+
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "Municipio de Tijuana, Baja California, México",
+    },
+
+    parentOrganization: {
+      "@type": "GovernmentOrganization",
+      name: "Ayuntamiento de Tijuana",
+      url: "https://www.tijuana.gob.mx",
+    },
+
+    department: {
+      "@type": "GovernmentOrganization",
+      name: "Agencia Digital de Tijuana",
+      url: "https://agenciadigitaltj.gob.mx",
+    },
+
     contactPoint: {
       "@type": "ContactPoint",
-      contactType: "Servicio al ciudadano",
-      telephone: "+52-664-123-4567",
+      contactType: "Atención ciudadana",
+      telephone: "+52-664-973-7000",
       email: "contacto@tijuana.gob.mx",
+      availableLanguage: "Spanish",
     },
   }),
+
   ...(type === "WebSite" && {
     potentialAction: {
       "@type": "SearchAction",
@@ -47,7 +69,7 @@ const structuredData = {
   }),
 };
 
-// Agregar BreadcrumbList para navegación
+/* 🔹 Breadcrumb dinámico */
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -61,7 +83,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Mejora Regulatoria",
+      name: name,
       item: canonicalURL.href,
     },
   ],
@@ -69,6 +91,7 @@ const breadcrumbSchema = {
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
 <script
   type="application/ld+json"
   set:html={JSON.stringify(breadcrumbSchema)}
