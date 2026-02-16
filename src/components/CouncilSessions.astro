@@ -1,0 +1,269 @@
+---
+/* Videos */
+const videoSessions = [
+  {
+    title: "Primera Sesión Ordinaria 2026",
+    publishedDate: "2026-01-15",
+    url: "https://youtube.com",
+  },
+];
+
+/* Actas */
+const minutesSessions = [
+  {
+    title: "Acta Primera Sesión Ordinaria 2026",
+    publishedDate: "2026-01-15",
+    url: "/docs/acta-sesion-1-2026.pdf",
+  },
+];
+
+/* Documentos adicionales */
+const additionalDocuments = [
+  {
+    title: "Orden del Día – Primera Sesión 2026",
+    publishedDate: "2026-01-15",
+    url: "/docs/orden-del-dia-1-2026.pdf",
+  },
+];
+
+const sessionDocuments = [...minutesSessions, ...additionalDocuments];
+
+videoSessions.sort(
+  (a, b) =>
+    new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+);
+
+sessionDocuments.sort(
+  (a, b) =>
+    new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+);
+
+const externalAttrs = {
+  target: "_blank",
+  rel: "noopener noreferrer",
+};
+---
+
+<section id="council-sessions" class="council-section">
+  <div class="council-container">
+    <div class="council-header">
+      <h1 class="council-title">Sesiones del Consejo</h1>
+      <p class="council-description">
+        Consulta pública de sesiones, actas y documentos relacionados con el
+        Consejo.
+      </p>
+    </div>
+
+    <!-- 🔎 Buscador -->
+    <div class="council-search-wrapper">
+      <input
+        type="text"
+        id="councilSearch"
+        placeholder="Buscar por título o fecha..."
+        class="council-search"
+      />
+    </div>
+
+    <!-- 🎥 VIDEOS -->
+    <div class="council-block">
+      <h2 class="council-subtitle">Videos de las Sesiones</h2>
+
+      {
+        videoSessions.length > 0 ? (
+          <ul class="council-list">
+            {videoSessions.map((item) => (
+              <li
+                class="council-item"
+                data-search={`${item.title} ${item.publishedDate}`}
+              >
+                <div>
+                  <strong>{item.title}</strong>
+                  <p class="council-date">Publicado: {item.publishedDate}</p>
+                </div>
+
+                <a
+                  href={item.url}
+                  {...externalAttrs}
+                  class="council-btn-outline"
+                >
+                  Ver video
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="council-empty">No hay videos publicados.</p>
+        )
+      }
+    </div>
+
+    <!-- 📄 ACTAS + DOCUMENTOS -->
+    <div class="council-block">
+      <h2 class="council-subtitle">Actas y Documentos</h2>
+
+      {
+        sessionDocuments.length > 0 ? (
+          <ul class="council-list" id="documentsList">
+            {sessionDocuments.map((item) => (
+              <li
+                class="council-item"
+                data-search={`${item.title} ${item.publishedDate}`}
+              >
+                <div>
+                  <strong>{item.title}</strong>
+                  <p class="council-date">Publicado: {item.publishedDate}</p>
+                </div>
+
+                <a
+                  href={item.url}
+                  {...externalAttrs}
+                  class="council-btn-primary"
+                >
+                  Descargar
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="council-empty">No hay documentos publicados.</p>
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  const input = document.getElementById("councilSearch");
+  const items = document.querySelectorAll("[data-search]");
+
+  input?.addEventListener("input", function (this: HTMLInputElement) {
+    const value = this.value.toLowerCase();
+
+    items.forEach((item) => {
+      const text = item.getAttribute("data-search")?.toLowerCase() ?? "";
+      (item as HTMLElement).style.display = text.includes(value)
+        ? "flex"
+        : "none";
+    });
+  });
+</script>
+
+<style>
+  .council-section {
+    padding: 8rem 1.5rem;
+    background: #ffffff;
+  }
+
+  .council-container {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  .council-header {
+    margin-bottom: 3rem;
+  }
+
+  .council-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #383838;
+    margin-bottom: 1rem;
+  }
+
+  .council-description {
+    font-size: 1.125rem;
+    color: #6b7280;
+  }
+
+  .council-search-wrapper {
+    margin-bottom: 3rem;
+  }
+
+  .council-search {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .council-block {
+    margin-bottom: 4rem;
+  }
+
+  .council-subtitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #750d2f;
+  }
+
+  .council-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .council-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #fafafa;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .council-date {
+    display: block;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+  }
+
+  .council-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  /* Botones */
+
+  .council-btn-outline,
+  .council-btn-primary {
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .council-btn-outline {
+    border: 2px solid #750d2f;
+    color: #750d2f;
+  }
+
+  .council-btn-outline:hover {
+    background: #750d2f;
+    color: white;
+  }
+
+  .council-btn-primary {
+    background: #750d2f;
+    color: white;
+    border: 2px solid #750d2f;
+  }
+
+  .council-btn-primary:hover {
+    background: #5c0a25;
+  }
+
+  .council-empty {
+    color: #6b7280;
+    font-style: italic;
+  }
+</style>

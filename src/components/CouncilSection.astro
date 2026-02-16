@@ -1,9 +1,8 @@
 ---
 const functions = [
-  "Proponer acciones de simplificación administrativa",
-  "Impulsar la digitalización de trámites y servicios",
-  "Dar seguimiento a la Agenda Regulatoria y de Simplificación",
-  "Promover la participación ciudadana",
+  "Revisar y proponer mejoras a la regulación municipal",
+  "Dar seguimiento a las agendas regulatoria y de simplificación",
+  "Canalizar la participación ciudadana en la mejora de trámites",
 ];
 
 const cards = [
@@ -12,6 +11,7 @@ const cards = [
     description:
       "Conoce la estructura, integración y atribuciones del Consejo.",
     buttonText: "Ver organigrama",
+    link: "https://mejore-regulatoria-prod.s3.us-east-005.backblazeb2.com/ORGANIGRAMA+CONSEJO+DE+SYD_+Lucidchart.pdf",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
   },
   {
@@ -19,6 +19,7 @@ const cards = [
     description:
       "Accede a los videos, actas, acuerdos y documentos generados en las sesiones del Consejo.",
     buttonText: "Ver sesiones y documentos",
+    link: "/consejo-sesiones",
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>`,
   },
 ];
@@ -33,10 +34,9 @@ const cards = [
             Consejo de Simplificación y Digitalización
           </h2>
           <p class="council-description">
-            El Consejo de Simplificación y Digitalización del Municipio de
-            Tijuana es un órgano de consulta, coordinación y vinculación con los
-            sectores social, privado, público y académico, encargado de impulsar
-            la implementación de la política municipal de Mejora Regulatoria.
+            El Consejo reúne a representantes del gobierno, la iniciativa
+            privada, la academia y la sociedad civil para supervisar y orientar
+            la política de Mejora Regulatoria del Municipio.
           </p>
         </div>
       </div>
@@ -63,7 +63,7 @@ const cards = [
                 <div class="card-icon" set:html={card.icon} />
                 <h4 class="card-title">{card.title}</h4>
                 <p class="card-description">{card.description}</p>
-                <a href="#" class="card-button">
+                <a href={card.link} class="card-button">
                   {card.buttonText}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

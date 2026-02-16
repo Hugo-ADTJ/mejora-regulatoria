@@ -1,72 +1,75 @@
 ---
 interface Props {
-  type?: 'WebSite' | 'GovernmentOrganization';
+  type?: "WebSite" | "GovernmentOrganization";
   name?: string;
   description?: string;
 }
 
 const {
-  type = 'WebSite',
-  name = 'Mejora Regulatoria - Ayuntamiento de Tijuana',
-  description = 'Transformando la administración pública de Tijuana para que sea clara, digital y accesible. Menos burocracia, más resultados.'
+  type = "WebSite",
+  name = "Mejora Regulatoria - H. Ayuntamiento de Tijuana",
+  description = "Transformando la administración pública de Tijuana para que sea clara, digital y accesible. Menos burocracia, más resultados.",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': type,
-  'name': name,
-  'description': description,
-  'url': canonicalURL.href,
-  'logo': new URL('/image.png', Astro.site).href,
-  'inLanguage': 'es-MX',
-  ...(type === 'GovernmentOrganization' && {
-    'address': {
-      '@type': 'PostalAddress',
-      'addressLocality': 'Tijuana',
-      'addressRegion': 'Baja California',
-      'addressCountry': 'MX'
+  "@context": "https://schema.org",
+  "@type": type,
+  name: name,
+  description: description,
+  url: canonicalURL.href,
+  logo: new URL("/image.png", Astro.site).href,
+  inLanguage: "es-MX",
+  ...(type === "GovernmentOrganization" && {
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Tijuana",
+      addressRegion: "Baja California",
+      addressCountry: "MX",
     },
-    'contactPoint': {
-      '@type': 'ContactPoint',
-      'contactType': 'Servicio al ciudadano',
-      'telephone': '+52-664-123-4567',
-      'email': 'contacto@tijuana.gob.mx'
-    }
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Servicio al ciudadano",
+      telephone: "+52-664-123-4567",
+      email: "contacto@tijuana.gob.mx",
+    },
   }),
-  ...(type === 'WebSite' && {
-    'potentialAction': {
-      '@type': 'SearchAction',
-      'target': {
-        '@type': 'EntryPoint',
-        'urlTemplate': `${new URL('/', Astro.site).href}?q={search_term_string}`
+  ...(type === "WebSite" && {
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${new URL("/", Astro.site).href}?q={search_term_string}`,
       },
-      'query-input': 'required name=search_term_string'
-    }
-  })
+      "query-input": "required name=search_term_string",
+    },
+  }),
 };
 
 // Agregar BreadcrumbList para navegación
 const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  'itemListElement': [
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
     {
-      '@type': 'ListItem',
-      'position': 1,
-      'name': 'Inicio',
-      'item': new URL('/', Astro.site).href
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: new URL("/", Astro.site).href,
     },
     {
-      '@type': 'ListItem',
-      'position': 2,
-      'name': 'Mejora Regulatoria',
-      'item': canonicalURL.href
-    }
-  ]
+      "@type": "ListItem",
+      position: 2,
+      name: "Mejora Regulatoria",
+      item: canonicalURL.href,
+    },
+  ],
 };
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbSchema)}
+/>
