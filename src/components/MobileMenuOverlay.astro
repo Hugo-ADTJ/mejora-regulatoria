@@ -1,17 +1,17 @@
 ---
 const menuItems = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#catalogo', label: 'Catálogo' },
-  { href: '#consejo', label: 'Consejo' },
-  { href: '#participacion', label: 'Participación' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: "#inicio", label: "Inicio" },
+  { href: "#catalogo", label: "Catálogo" },
+  { href: "#consejo", label: "Consejo" },
+  { href: "#participacion", label: "Participación" },
+  { href: "#contacto", label: "Contacto" },
 ];
 ---
 
 <!-- Mobile Menu Full Screen Overlay -->
 <nav class="mobile-nav" id="mobile-nav" aria-label="Menú móvil">
-  <button 
-    class="mobile-close-button" 
+  <button
+    class="mobile-close-button"
     id="mobile-close-button"
     aria-label="Cerrar menú"
   >
@@ -26,66 +26,68 @@ const menuItems = [
       stroke-linecap="round"
       stroke-linejoin="round"
     >
-      <line x1="18" y1="6" x2="6" y2="18" />
-      <line x1="6" y1="6" x2="18" y2="18" />
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
     </svg>
   </button>
   <div class="mobile-nav-content">
     <a href="/" class="mobile-logo">
-      <img 
-        src="/image.png" 
-        alt="XXV Ayuntamiento de Tijuana - Mejora Regulatoria" 
-        class="mobile-logo-image" 
-        width="200" 
+      <img
+        src="/image.png"
+        alt="XXV Ayuntamiento de Tijuana - Mejora Regulatoria"
+        class="mobile-logo-image"
+        width="200"
         height="80"
         loading="lazy"
         decoding="async"
       />
     </a>
     <ul class="mobile-menu">
-      {menuItems.map((item) => (
-        <li>
-          <a href={item.href} class="mobile-link">
-            {item.label}
-          </a>
-        </li>
-      ))}
+      {
+        menuItems.map((item) => (
+          <li>
+            <a href={item.href} class="mobile-link">
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </nav>
 
 <script>
-  const openButton = document.getElementById('mobile-menu-button');
-  const closeButton = document.getElementById('mobile-close-button');
-  const nav = document.getElementById('mobile-nav');
-  const menuLinks = document.querySelectorAll('.mobile-link');
+  const openButton = document.getElementById("mobile-menu-button");
+  const closeButton = document.getElementById("mobile-close-button");
+  const nav = document.getElementById("mobile-nav");
+  const menuLinks = document.querySelectorAll(".mobile-link");
 
   function openMenu() {
-    nav?.classList.add('active');
-    openButton?.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    nav?.classList.add("active");
+    openButton?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
   }
 
   function closeMenu() {
-    nav?.classList.remove('active');
-    openButton?.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    nav?.classList.remove("active");
+    openButton?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
   }
 
   // Open menu on button click
-  openButton?.addEventListener('click', openMenu);
+  openButton?.addEventListener("click", openMenu);
 
   // Close menu on close button click
-  closeButton?.addEventListener('click', closeMenu);
+  closeButton?.addEventListener("click", closeMenu);
 
   // Close menu on link click
-  menuLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 
   // Close menu when resizing to desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024 && nav?.classList.contains('active')) {
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024 && nav?.classList.contains("active")) {
       closeMenu();
     }
   });
@@ -134,7 +136,9 @@ const menuItems = [
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.25s ease-out, visibility 0.25s ease-out;
+    transition:
+      opacity 0.25s ease-out,
+      visibility 0.25s ease-out;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -165,7 +169,7 @@ const menuItems = [
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #750D2F;
+    background-color: #750d2f;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
   }
@@ -188,7 +192,7 @@ const menuItems = [
     padding: 1.25rem 1.5rem;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #121212;
+    color: #383838;
     text-align: center;
     text-decoration: none;
     border-radius: 0.5rem;
@@ -198,7 +202,7 @@ const menuItems = [
 
   .mobile-link:hover {
     background-color: rgba(117, 13, 47, 0.1);
-    color: #750D2F;
+    color: #750d2f;
     transform: translateX(8px);
   }
 

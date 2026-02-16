@@ -1,44 +1,70 @@
 ---
 const lawObjectives = [
-  "Eliminar trámites redundantes o sin valor público",
-  "Digitalizar y automatizar servicios gubernamentales",
-  "Reducir tiempos y costos para la ciudadanía y las empresas",
-  "Garantizar certeza jurídica y transparencia"
+  "Reducir trámites innecesarios y eliminar requisitos que no aporten valor.",
+  "Simplificar procesos administrativos para que sean más claros y comprensibles.",
+  "Impulsar la digitalización de trámites y servicios públicos.",
+  "Evitar duplicidad de información, para que la ciudadanía no tenga que entregar los mismos documentos varias veces.",
+  "Reducir tiempos de respuesta por parte de las autoridades.",
+  "Fortalecer la transparencia y el gobierno abierto.",
+  "Mejorar la calidad regulatoria, asegurando que las normas realmente generen beneficios sociales.",
+  "Disminuir costos administrativos tanto para las personas como para el gobierno.",
 ];
 ---
 
 <section id="ley-nacional" class="law-section">
   <div class="law-container">
     <div class="section-header">
-      <h2 class="section-title">Ley Nacional para Eliminar Trámites Burocráticos</h2>
+      <h2 class="section-title">
+        Ley Nacional para Eliminar Trámites Burocráticos
+      </h2>
     </div>
 
     <div class="law-content">
       <p class="law-description">
-        La Ley Nacional para Eliminar Trámites Burocráticos establece las bases para transformar la gestión pública mediante la eliminación de requisitos innecesarios, la digitalización de procesos y la homologación de trámites en los tres órdenes de gobierno.
+        Es una ley que busca que los trámites y servicios de gobierno sean más
+        fáciles, rápidos y claros para las personas. Su propósito es evitar
+        procesos innecesarios, requisitos repetidos y reglas complicadas que
+        solo generan pérdida de tiempo y costos adicionales.
+        <br /><br />
+        Esta ley promueve que las autoridades simplifiquen sus procedimientos, utilicen
+        herramientas digitales y trabajen con mayor transparencia, para que la relación
+        entre ciudadanía y gobierno sea más ágil y eficiente.
       </p>
 
       <div class="law-objectives">
         <h3 class="objectives-subtitle">Objetivos principales de la Ley:</h3>
         <ul class="objectives-list">
-          {lawObjectives.map((objective) => (
-            <li class="objective-item">
-              <div class="objective-bullet"></div>
-              <span class="objective-text">{objective}</span>
-            </li>
-          ))}
+          {
+            lawObjectives.map((objective) => (
+              <li class="objective-item">
+                <div class="objective-bullet" />
+                <span class="objective-text">{objective}</span>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div class="law-cta">
-        <a 
-          href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf" 
-          target="_blank" 
+        <a
+          href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LNETB.pdf"
+          target="_blank"
           rel="noopener noreferrer"
           class="law-button"
         >
           Consultar Ley Nacional para Eliminar Trámites Burocráticos
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
+          >
         </a>
       </div>
     </div>
@@ -48,7 +74,7 @@ const lawObjectives = [
 <style>
   .law-section {
     padding: 8rem 1.5rem;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
   .law-container {
@@ -64,7 +90,7 @@ const lawObjectives = [
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #BA945C;
+    color: #ba945c;
     margin-bottom: 1rem;
   }
 
@@ -72,7 +98,7 @@ const lawObjectives = [
     font-size: 2.25rem;
     font-weight: 900;
     letter-spacing: -0.03em;
-    color: #121212;
+    color: #383838;
     line-height: 1.2;
   }
 
@@ -89,9 +115,9 @@ const lawObjectives = [
 
   @media (min-width: 1024px) {
     .law-content {
-      grid-template-columns: 1fr 1fr;
+      /* grid-template-columns: 1fr 1fr; */
       gap: 4rem;
-      align-items: start;
+      /* align-items: start; */
     }
   }
 
@@ -118,34 +144,42 @@ const lawObjectives = [
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #750D2F;
+    color: #750d2f;
   }
 
   .objectives-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 0;
+  }
+
+  @media (min-width: 768px) {
+    .objectives-list {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+    }
   }
 
   .objective-item {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 1rem;
+    /* padding: 1rem 0; */
+    /* border-bottom: 1px solid #e5e7eb; */
   }
 
   .objective-item:last-child {
     border-bottom: none;
+    padding-bottom: none;
   }
 
   .objective-bullet {
     width: 8px;
     height: 8px;
-    background-color: #BA945C;
+    background-color: #ba945c;
     border-radius: 50%;
     flex-shrink: 0;
     margin-top: 0.5rem;
@@ -177,7 +211,7 @@ const lawObjectives = [
     justify-content: center;
     gap: 0.75rem;
     padding: 1rem 1.75rem;
-    background-color: #750D2F;
+    background-color: #750d2f;
     color: white;
     font-size: 0.875rem;
     font-weight: 700;
@@ -185,7 +219,7 @@ const lawObjectives = [
     border-radius: 0.5rem;
     transition: all 0.2s ease;
     min-height: 48px;
-    border: 2px solid #750D2F;
+    border: 2px solid #750d2f;
   }
 
   @media (min-width: 640px) {

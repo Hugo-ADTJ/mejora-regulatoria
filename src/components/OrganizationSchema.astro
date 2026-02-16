@@ -1,65 +1,70 @@
 ---
 const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'GovernmentOrganization',
-  'name': 'Ayuntamiento de Tijuana - Mejora Regulatoria',
-  'alternateName': 'XXV Ayuntamiento de Tijuana',
-  'description': 'Dirección de Mejora Regulatoria del Municipio de Tijuana, encargada de simplificar trámites, digitalizar servicios y eliminar la burocracia innecesaria.',
-  'url': 'https://mejora-regulatoria.tijuana.gob.mx',
-  'logo': 'https://mejora-regulatoria.tijuana.gob.mx/image.png',
-  'image': 'https://mejora-regulatoria.tijuana.gob.mx/escudo_de_tijuana.svg',
-  'telephone': '+52-664-973-7000',
-  'email': 'contacto@tijuana.gob.mx',
-  'address': {
-    '@type': 'PostalAddress',
-    'streetAddress': 'Centro de Gobierno, Av. Independencia 1350',
-    'addressLocality': 'Tijuana',
-    'addressRegion': 'Baja California',
-    'postalCode': '22010',
-    'addressCountry': 'MX'
+  "@context": "https://schema.org",
+  "@type": "GovernmentOrganization",
+  name: "Ayuntamiento de Tijuana - Mejora Regulatoria",
+  alternateName: "XXV Ayuntamiento de Tijuana",
+  description:
+    "Dirección de Mejora Regulatoria del Municipio de Tijuana, encargada de simplificar trámites, digitalizar servicios y eliminar la burocracia innecesaria.",
+  url: "https://mejora-regulatoria.tijuana.gob.mx",
+  logo: "https://mejora-regulatoria.tijuana.gob.mx/image.png",
+  image: "https://mejora-regulatoria.tijuana.gob.mx/escudo_de_tijuana.svg",
+  telephone: "+52-664-973-7000",
+  email: "contacto@tijuana.gob.mx",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Centro de Gobierno, Av. Independencia 1350",
+    addressLocality: "Tijuana",
+    addressRegion: "Baja California",
+    postalCode: "22010",
+    addressCountry: "MX",
   },
-  'geo': {
-    '@type': 'GeoCoordinates',
-    'latitude': '32.5149469',
-    'longitude': '-117.0382471'
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "32.5149469",
+    longitude: "-117.0382471",
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Tijuana',
-    'sameAs': 'https://es.wikipedia.org/wiki/Tijuana'
+  areaServed: {
+    "@type": "City",
+    name: "Tijuana",
+    sameAs: "https://es.wikipedia.org/wiki/Tijuana",
   },
-  'sameAs': [
-    'https://www.tijuana.gob.mx',
-    'https://www.facebook.com/AyuntamientodeTijuana',
-    'https://twitter.com/AytoTijuana',
-    'https://www.instagram.com/aytotijuana'
+  sameAs: [
+    "https://www.tijuana.gob.mx",
+    "https://www.facebook.com/AyuntamientodeTijuana",
+    "https://twitter.com/AytoTijuana",
+    "https://www.instagram.com/aytotijuana",
   ],
-  'parentOrganization': {
-    '@type': 'GovernmentOrganization',
-    'name': 'Ayuntamiento de Tijuana',
-    'url': 'https://www.tijuana.gob.mx'
+  parentOrganization: {
+    "@type": "GovernmentOrganization",
+    name: "Ayuntamiento de Tijuana",
+    url: "https://www.tijuana.gob.mx",
   },
-  'department': [
+  department: [
     {
-      '@type': 'GovernmentOrganization',
-      'name': 'Consejo de Simplificación y Digitalización',
-      'description': 'Órgano de consulta, coordinación y vinculación encargado de impulsar la Mejora Regulatoria en Tijuana'
-    }
+      "@type": "GovernmentOrganization",
+      name: "Consejo de Simplificación y Digitalización",
+      description:
+        "Órgano de consulta, coordinación y vinculación encargado de impulsar la Mejora Regulatoria en Tijuana",
+    },
   ],
-  'knowsAbout': [
-    'Mejora Regulatoria',
-    'Simplificación Administrativa',
-    'Digitalización de Trámites',
-    'Eliminación de Burocracia',
-    'Catálogo de Regulaciones',
-    'REMUTYS',
-    'Ley Nacional para Eliminar Trámites Burocráticos'
+  knowsAbout: [
+    "Mejora Regulatoria",
+    "Simplificación Administrativa",
+    "Digitalización de Trámites",
+    "Eliminación de Burocracia",
+    "Catálogo de Regulaciones",
+    "REMUTyS",
+    "Ley Nacional para Eliminar Trámites Burocráticos",
   ],
-  'serviceArea': {
-    '@type': 'AdministrativeArea',
-    'name': 'Municipio de Tijuana, Baja California, México'
-  }
+  serviceArea: {
+    "@type": "AdministrativeArea",
+    name: "Municipio de Tijuana, Baja California, México",
+  },
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(organizationSchema)}
+/>

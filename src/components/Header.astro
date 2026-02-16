@@ -4,15 +4,14 @@ import MobileMenuButton from "./MobileMenuButton.astro";
 
 <header class="header" id="main-header">
   <div class="header-container">
-    
     <!-- Logo / Branding -->
     <div class="logo-group">
       <div class="logo-container">
-        <img 
-          src="/image.png" 
-          alt="XXV Ayuntamiento de Tijuana - Mejora Regulatoria" 
-          class="logo-image" 
-          width="200" 
+        <img
+          src="/logo.svg"
+          alt="XXV Ayuntamiento de Tijuana - Mejora Regulatoria"
+          class="logo-image"
+          width="200"
           height="80"
           loading="eager"
           decoding="async"
@@ -28,42 +27,95 @@ import MobileMenuButton from "./MobileMenuButton.astro";
         <a href="#consejo" class="nav-link">Consejo</a>
         <a href="#participación" class="nav-link">Participación</a>
         <div class="nav-divider"></div>
-        <button class="nav-button-tramites">Trámites</button>
+        <a
+          href="https://remutys.agenciadigitaltj.gob.mx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-button-tramites"
+        >
+          Trámites
+        </a>
       </div>
     </nav>
 
     <!-- Redes Sociales e Iconos -->
     <div class="header-actions">
       <nav class="social-icons" aria-label="Redes sociales">
-        <a href="#" class="social-link" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        <a
+          href="https://www.facebook.com/gobtijuanamx/"
+          class="social-link"
+          aria-label="Facebook"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            ></path></svg
+          >
         </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-        </a>
-        <a href="#" class="social-link" aria-label="Instagram">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-        </a>
+        <!-- <a href="#" class="social-link" aria-label="Twitter">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+            ></path></svg
+          >
+        </a> -->
+        <!-- <a href="#" class="social-link" aria-label="Instagram">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
+              d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+              x1="17.5"
+              x2="17.51"
+              y1="6.5"
+              y2="6.5"></line></svg
+          >
+        </a> -->
       </nav>
       <div class="mobile-menu-wrapper">
-         <MobileMenuButton />
+        <MobileMenuButton />
       </div>
     </div>
   </div>
 </header>
 
 <script>
-  const header = document.getElementById('main-header');
-  
+  const header = document.getElementById("main-header");
+
   const handleScroll = () => {
     if (window.scrollY > 20) {
-      header?.classList.add('scrolled');
+      header?.classList.add("scrolled");
     } else {
-      header?.classList.remove('scrolled');
+      header?.classList.remove("scrolled");
     }
   };
 
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener("scroll", handleScroll);
 </script>
 
 <style>
@@ -84,7 +136,7 @@ import MobileMenuButton from "./MobileMenuButton.astro";
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom-color: #E5E7EB;
+    border-bottom-color: #e5e7eb;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   }
 
@@ -113,7 +165,7 @@ import MobileMenuButton from "./MobileMenuButton.astro";
       grid-template-columns: 1fr auto 1fr;
     }
   }
-  
+
   /* Logo */
   .logo-group {
     display: flex;
@@ -122,13 +174,13 @@ import MobileMenuButton from "./MobileMenuButton.astro";
   }
 
   .logo-container {
-    background-color: #750D2F;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    /* background-color: #750d2f;*/
+    /* padding: 0.5rem 1rem; */
+    /* border-radius: 0.5rem; */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
     transition: transform 0.3s ease;
   }
 
@@ -165,11 +217,19 @@ import MobileMenuButton from "./MobileMenuButton.astro";
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid #f3f4f6;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.03), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.03),
+      0 8px 10px -6px rgba(0, 0, 0, 0.03);
     border-radius: 9999px;
     padding: 0.375rem 0.375rem;
     display: flex;
     align-items: center;
+  }
+
+  .header.scrolled .nav-pill {
+    background: none;
+    box-shadow: none;
+    border: none;
   }
 
   .nav-link {
@@ -185,12 +245,12 @@ import MobileMenuButton from "./MobileMenuButton.astro";
   }
 
   .nav-link:hover {
-    color: #750D2F;
+    color: #750d2f;
     background-color: rgba(117, 13, 47, 0.05);
   }
 
   .nav-link:active {
-    color: #750D2F;
+    color: #750d2f;
     background-color: rgba(117, 13, 47, 0.1);
   }
 
@@ -202,7 +262,7 @@ import MobileMenuButton from "./MobileMenuButton.astro";
   }
 
   .nav-button-tramites {
-    background-color: #750D2F;
+    background-color: #750d2f;
     color: white;
     padding: 0.625rem 1.5rem;
     border-radius: 9999px;
@@ -257,7 +317,7 @@ import MobileMenuButton from "./MobileMenuButton.astro";
   }
 
   .social-link:hover {
-    color: #750D2F;
+    color: #750d2f;
     background-color: rgba(117, 13, 47, 0.05);
   }
 

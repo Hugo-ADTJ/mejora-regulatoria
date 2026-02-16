@@ -1,67 +1,85 @@
 ---
 const items = [
-  { 
-    title: 'Registro Municipal de Regulaciones', 
-    desc: 'Consulta bandos, reglamentos, lineamientos y disposiciones vigentes.', 
-    buttonText: 'Ir al Registro de Regulaciones',
-    link: 'https://www.tijuana.gob.mx/normatividad/',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>` 
+  {
+    title: "Registro Municipal de Regulaciones",
+    desc: "Consulta bandos, reglamentos, lineamientos y disposiciones vigentes.",
+    buttonText: "Ir al Registro de Regulaciones",
+    link: "https://www.tijuana.gob.mx/normatividad/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>`,
   },
-  { 
-    title: 'Registro Municipal de Trámites y Servicios (REMUTYS)', 
-    desc: 'Encuentra información completa de cada trámite: requisitos, costos, tiempos de respuesta y fundamento legal.', 
-    buttonText: 'Ir al REMUTYS',
-    link: '#',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>` 
+  {
+    title: "Registro Municipal de Trámites y Servicios (REMUTyS)",
+    desc: "Encuentra información completa de cada trámite: requisitos, costos, tiempos de respuesta y fundamento legal.",
+    buttonText: "Ir al REMUTyS",
+    link: "https://remutys.agenciadigitaltj.gob.mx/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>`,
   },
-  { 
-    title: 'Registro Municipal de Visitas Domiciliarias', 
-    desc: 'Consulta las visitas de inspección autorizadas y sus fundamentos legales.', 
-    buttonText: 'Consultar registro (PDF)',
-    link: '#',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>` 
+  {
+    title: "Registro Municipal de Visitas Domiciliarias",
+    desc: "Consulta las visitas de inspección autorizadas y sus fundamentos legales.",
+    buttonText: "Consultar registro",
+    link: "https://mejore-regulatoria-prod.s3.us-east-005.backblazeb2.com/Visitas_Domiciliarias.pdf",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
   },
-  { 
-    title: 'Registro Municipal de Inspectores y Verificadores', 
-    desc: 'Identifica al personal autorizado para realizar inspecciones y verificaciones.', 
-    buttonText: 'Consultar padrón (PDF)',
-    link: '#',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>` 
+  {
+    title: "Registro Municipal de Inspectores y Verificadores",
+    desc: "Identifica al personal autorizado para realizar inspecciones y verificaciones.",
+    buttonText: "Consultar padrón",
+    link: "https://mejore-regulatoria-prod.s3.us-east-005.backblazeb2.com/Padron_de_Inspectores.pdf",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>`,
   },
-  { 
-    title: 'Protesta Ciudadana', 
-    desc: 'Presenta una inconformidad cuando un trámite o servicio no se ajuste a lo establecido en el catálogo.', 
-    buttonText: 'Presentar protesta ciudadana',
-    link: '#',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>` 
-  }
+  {
+    title: "Protesta Ciudadana",
+    desc: "Presenta una inconformidad en cuanto a trámites o servicios.",
+    buttonText: "Presentar protesta ciudadana",
+    link: "http://t-atiende.tijuana.gob.mx/",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`,
+  },
 ];
 ---
 
 <section id="catálogo" class="catalog-section">
   <div class="catalog-container">
     <div class="section-header">
-      <h2 class="section-title">Catálogo Municipal de Regulaciones, Trámites y Servicios</h2>
+      <h2 class="section-title">
+        Catálogo Municipal de Regulaciones, Trámites y Servicios
+      </h2>
       <p class="section-description">
-        El Catálogo Municipal concentra toda la información oficial sobre regulaciones, trámites, servicios, inspecciones y mecanismos de atención ciudadana, garantizando transparencia y certeza jurídica.
+        El Catálogo Municipal concentra toda la información oficial sobre
+        regulaciones, trámites, servicios, inspecciones y mecanismos de atención
+        ciudadana, garantizando transparencia y certeza jurídica.
       </p>
     </div>
 
     <nav aria-label="Catálogo de servicios municipales">
       <ul class="catalog-grid">
-        {items.map((item, i) => (
-          <li>
-            <a href={item.link} class="catalog-card" data-index={i}>
-              <div class="card-icon" set:html={item.icon}></div>
-              <h3 class="card-title">{item.title}</h3>
-              <p class="card-desc">{item.desc}</p>
-              <span class="card-button" aria-hidden="true">
-                <span>{item.buttonText}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </span>
-            </a>
-          </li>
-        ))}
+        {
+          items.map((item, i) => (
+            <li>
+              <a href={item.link} class="catalog-card" data-index={i}>
+                <div class="card-icon" set:html={item.icon} />
+                <h3 class="card-title">{item.title}</h3>
+                <p class="card-desc">{item.desc}</p>
+                <span class="card-button" aria-hidden="true">
+                  <span>{item.buttonText}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
   </div>
@@ -70,7 +88,7 @@ const items = [
 <style>
   .catalog-section {
     padding: 8rem 1.5rem;
-    background-color: #FDFDFD;
+    background-color: #fdfdfd;
   }
 
   .catalog-container {
@@ -86,7 +104,7 @@ const items = [
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #BA945C;
+    color: #ba945c;
     margin-bottom: 1rem;
   }
 
@@ -94,7 +112,7 @@ const items = [
     font-size: 2.25rem;
     font-weight: 900;
     letter-spacing: -0.03em;
-    color: #121212;
+    color: #383838;
     margin-bottom: 1rem;
     line-height: 1.2;
   }
@@ -145,8 +163,8 @@ const items = [
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
-    background-color: #FFFFFF;
-    border: 1px solid #E5E7EB;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -171,8 +189,8 @@ const items = [
 
   .catalog-card[data-index="4"] {
     grid-column: span 1;
-    background-color: #750D2F;
-    border-color: #750D2F;
+    background-color: #750d2f;
+    border-color: #750d2f;
   }
 
   @media (min-width: 768px) {
@@ -200,7 +218,7 @@ const items = [
   @media (min-width: 768px) {
     .catalog-card:hover {
       transform: translateY(-4px);
-      border-color: #BA945C;
+      border-color: #ba945c;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
@@ -216,24 +234,24 @@ const items = [
   }
 
   .card-icon {
-    color: #750D2F;
+    color: #750d2f;
     display: flex;
     width: fit-content;
   }
 
   .catalog-card[data-index="4"] .card-icon {
-    color: #BA945C;
+    color: #ba945c;
   }
 
   .card-title {
     font-size: 1.125rem;
     font-weight: 900;
-    color: #121212;
+    color: #383838;
     line-height: 1.3;
   }
 
   .catalog-card[data-index="4"] .card-title {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   .card-desc {
@@ -253,11 +271,11 @@ const items = [
     gap: 0.5rem;
     font-size: 0.8125rem;
     font-weight: 700;
-    color: #750D2F;
+    color: #750d2f;
     margin-top: auto;
   }
 
   .catalog-card[data-index="4"] .card-button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 </style>

@@ -30,7 +30,7 @@ Funciones principales:
 Cards
 Card 1. Objetivo e Integrantes
 Descripción: Conoce la estructura, integración y atribuciones del Consejo.
-Botón: Ver organigrama (PDF)
+Botón: Ver organigrama
 Card 2. Sesiones del Consejo
 Descripción: Accede a los videos, actas, acuerdos y documentos generados en las sesiones del Consejo.
 Botón: Ver sesiones y documentos
@@ -42,15 +42,15 @@ Registro Municipal de Regulaciones
 Descripción: Consulta bandos, reglamentos, lineamientos y disposiciones vigentes.
 Botón: Ir al Registro de Regulaciones
 Enlace: https://www.tijuana.gob.mx/normatividad/
-Registro Municipal de Trámites y Servicios (REMUTYS)
+Registro Municipal de Trámites y Servicios (REMUTyS)
 Descripción: Encuentra información completa de cada trámite: requisitos, costos, tiempos de respuesta y fundamento legal.
-Botón: Ir al REMUTYS
+Botón: Ir al REMUTyS
 Registro Municipal de Visitas Domiciliarias
 Descripción: Consulta las visitas de inspección autorizadas y sus fundamentos legales.
-Botón: Consultar registro (PDF)
+Botón: Consultar registro
 Registro Municipal de Inspectores y Verificadores
 Descripción: Identifica al personal autorizado para realizar inspecciones y verificaciones.
-Botón: Consultar padrón (PDF)
+Botón: Consultar padrón
 Protesta Ciudadana
 Descripción: Presenta una inconformidad cuando un trámite o servicio no se ajuste a lo establecido en el catálogo.
 Botón: Presentar protesta ciudadana

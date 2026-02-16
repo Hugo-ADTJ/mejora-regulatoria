@@ -1,18 +1,18 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
-  type?: 'website' | 'article';
+  type?: "website" | "article";
 }
 
 const {
   title,
   description,
-  image = '/image.png',
-  type = 'website'
+  image = "/image.png",
+  type = "website",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -24,12 +24,19 @@ const ogImage = new URL(image, Astro.site);
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#750D2F" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" />
+<meta
+  name="theme-color"
+  media="(prefers-color-scheme: dark)"
+  content="#1a1a1a"
+/>
 
 <!-- SEO Meta Tags -->
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="keywords" content="Mejora Regulatoria Tijuana, cómo hacer trámites en Tijuana, simplificación administrativa Tijuana, trámites municipales Tijuana sin burocracia, Consejo de Simplificación Tijuana, Catálogo de regulaciones Tijuana, digitalización trámites gobierno Tijuana, eliminar trámites burocráticos Tijuana, REMUTYS Tijuana, Registro Municipal de Trámites Tijuana, participación ciudadana Tijuana, Ayuntamiento de Tijuana servicios digitales, requisitos trámites Tijuana 2026, Ley Nacional Eliminar Trámites Burocráticos Tijuana, gobierno eficiente Tijuana, servicios municipales en línea Tijuana, protesta ciudadana Tijuana, visitas domiciliarias Tijuana, inspectores municipales Tijuana, certeza jurídica trámites Tijuana" />
+<meta
+  name="keywords"
+  content="Mejora Regulatoria Tijuana, cómo hacer trámites en Tijuana, simplificación administrativa Tijuana, trámites municipales Tijuana sin burocracia, Consejo de Simplificación Tijuana, Catálogo de regulaciones Tijuana, digitalización trámites gobierno Tijuana, eliminar trámites burocráticos Tijuana, REMUTyS Tijuana, Registro Municipal de Trámites Tijuana, participación ciudadana Tijuana, Ayuntamiento de Tijuana servicios digitales, requisitos trámites Tijuana 2026, Ley Nacional Eliminar Trámites Burocráticos Tijuana, gobierno eficiente Tijuana, servicios municipales en línea Tijuana, protesta ciudadana Tijuana, visitas domiciliarias Tijuana, inspectores municipales Tijuana, certeza jurídica trámites Tijuana"
+/>
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Open Graph / Facebook -->
@@ -39,7 +46,10 @@ const ogImage = new URL(image, Astro.site);
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
 <meta property="og:locale" content="es_MX" />
-<meta property="og:site_name" content="Mejora Regulatoria - Ayuntamiento de Tijuana" />
+<meta
+  property="og:site_name"
+  content="Mejora Regulatoria - Ayuntamiento de Tijuana"
+/>
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -56,18 +66,45 @@ const ogImage = new URL(image, Astro.site);
 
 <!-- Additional SEO -->
 <meta name="author" content="Ayuntamiento de Tijuana" />
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta
+  name="robots"
+  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+/>
 <link rel="alternate" hreflang="es-mx" href={canonicalURL} />
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-<link rel="icon" type="image/png" sizes="32x32" href="/icon-light-32x32.png" media="(prefers-color-scheme: light)" />
-<link rel="icon" type="image/png" sizes="32x32" href="/icon-dark-32x32.png" media="(prefers-color-scheme: dark)" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/icon-light-32x32.png"
+  media="(prefers-color-scheme: light)"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/icon-dark-32x32.png"
+  media="(prefers-color-scheme: dark)"
+/>
 <link rel="apple-touch-icon" href="/apple-icon.png" />
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Preload critical fonts -->
-<link rel="preload" href="/font/ITCAvantGardeStd-Md.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/font/ITCAvantGardeStd-Bold.woff2" as="font" type="font/woff2" crossorigin />
+<link
+  rel="preload"
+  href="/font/ITCAvantGardeStd-Md.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/font/ITCAvantGardeStd-Bold.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>

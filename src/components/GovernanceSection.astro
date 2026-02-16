@@ -4,28 +4,31 @@ const principles = [
   "Digitalización prioritaria",
   "Transparencia y rendición de cuentas",
   "Participación ciudadana",
-  "Enfoque en resultados"
+  "Enfoque en resultados",
 ];
 
 const cards = [
   {
-    title: 'Agenda Regulatoria',
-    description: 'Conoce las propuestas de creación, modificación o eliminación de regulaciones vigentes.',
-    buttonText: 'Consultar agenda y enviar comentarios',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>`
+    title: "Agenda Regulatoria",
+    description:
+      "Conoce las propuestas de creación, modificación o eliminación de regulaciones vigentes.",
+    buttonText: "Consultar agenda y enviar comentarios",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>`,
   },
   {
-    title: 'Agenda de Simplificación y Digitalización',
-    description: 'Accede a las acciones programadas para simplificar y digitalizar trámites (publicación semestral).',
-    buttonText: 'Consultar agenda y enviar comentarios',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>`
+    title: "Agenda de Simplificación y Digitalización",
+    description:
+      "Accede a las acciones programadas para simplificar y digitalizar trámites (publicación semestral).",
+    buttonText: "Consultar agenda y enviar comentarios",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>`,
   },
   {
-    title: 'Análisis de Impacto Regulatorio',
-    description: 'Herramienta para evaluar los efectos de nuevas regulaciones antes de su emisión.',
-    buttonText: 'Próximamente',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`
-  }
+    title: "Análisis de Impacto Regulatorio",
+    description:
+      "Herramienta para evaluar los efectos de nuevas regulaciones antes de su emisión.",
+    buttonText: "Próximamente",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>`,
+  },
 ];
 ---
 
@@ -34,34 +37,53 @@ const cards = [
     <div class="section-header">
       <h2 class="section-title">Herramientas de Gobernanza Regulatoria</h2>
       <p class="section-description">
-        El Sistema Municipal de Gobernanza Regulatoria coordina a las dependencias municipales para mejorar continuamente las regulaciones y simplificar los trámites y servicios, asegurando que generen beneficios superiores a sus costos y el máximo valor público.
+        El Sistema Municipal de Gobernanza Regulatoria coordina a las
+        dependencias municipales para mejorar continuamente las regulaciones y
+        simplificar los trámites y servicios, asegurando que generen beneficios
+        superiores a sus costos y el máximo valor público.
       </p>
     </div>
 
     <div class="principles-section">
       <h3 class="principles-title">Principios rectores:</h3>
       <ul class="principles-list">
-        {principles.map((principle) => (
-          <li class="principle-item">
-            <div class="principle-bullet"></div>
-            <span class="principle-text">{principle}</span>
-          </li>
-        ))}
+        {
+          principles.map((principle) => (
+            <li class="principle-item">
+              <div class="principle-bullet" />
+              <span class="principle-text">{principle}</span>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
     <ul class="cards-grid">
-      {cards.map((card) => (
-        <li class="governance-card">
-          <div class="card-icon" set:html={card.icon}></div>
-          <h4 class="card-title">{card.title}</h4>
-          <p class="card-description">{card.description}</p>
-          <a href="#" class="card-button">
-            {card.buttonText}
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-          </a>
-        </li>
-      ))}
+      {
+        cards.map((card) => (
+          <li class="governance-card">
+            <div class="card-icon" set:html={card.icon} />
+            <h4 class="card-title">{card.title}</h4>
+            <p class="card-description">{card.description}</p>
+            <a href="#" class="card-button">
+              {card.buttonText}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
@@ -69,7 +91,7 @@ const cards = [
 <style>
   .governance-section {
     padding: 8rem 1.5rem;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 
   .governance-container {
@@ -85,7 +107,7 @@ const cards = [
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #BA945C;
+    color: #ba945c;
     margin-bottom: 1rem;
   }
 
@@ -93,7 +115,7 @@ const cards = [
     font-size: 2.25rem;
     font-weight: 900;
     letter-spacing: -0.03em;
-    color: #121212;
+    color: #383838;
     line-height: 1.2;
     margin-bottom: 1rem;
   }
@@ -120,7 +142,7 @@ const cards = [
   .principles-section {
     margin-bottom: 4rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .principles-title {
@@ -128,7 +150,7 @@ const cards = [
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #750D2F;
+    color: #750d2f;
     margin-bottom: 1.5rem;
   }
 
@@ -138,7 +160,7 @@ const cards = [
     margin: 0;
     display: grid;
     gap: 0;
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid #e5e7eb;
   }
 
   @media (min-width: 640px) {
@@ -158,13 +180,13 @@ const cards = [
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1rem 1rem 0;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .principle-bullet {
     width: 6px;
     height: 6px;
-    background-color: #BA945C;
+    background-color: #ba945c;
     border-radius: 50%;
     flex-shrink: 0;
   }
@@ -196,32 +218,32 @@ const cards = [
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     border-radius: 0.5rem;
     transition: all 0.2s ease;
-    border: 1px solid #E5E7EB;
+    border: 1px solid #e5e7eb;
   }
 
   @media (min-width: 768px) {
     .governance-card:hover {
-      border-color: #BA945C;
+      border-color: #ba945c;
     }
   }
 
   .governance-card:active {
-    border-color: #BA945C;
+    border-color: #ba945c;
   }
 
   .card-icon {
-    color: #750D2F;
+    color: #750d2f;
     display: flex;
     width: 40px;
     height: 40px;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 0.375rem;
-    border: 1px solid #E5E7EB;
+    border: 1px solid #e5e7eb;
   }
 
   .card-icon svg {
@@ -232,7 +254,7 @@ const cards = [
   .card-title {
     font-size: 1.125rem;
     font-weight: 900;
-    color: #121212;
+    color: #383838;
     line-height: 1.3;
   }
 
@@ -249,7 +271,7 @@ const cards = [
     gap: 0.5rem;
     font-size: 0.8125rem;
     font-weight: 700;
-    color: #750D2F;
+    color: #750d2f;
     text-decoration: none;
     width: fit-content;
     transition: all 0.2s ease;
@@ -260,12 +282,12 @@ const cards = [
   @media (min-width: 768px) {
     .card-button:hover {
       gap: 0.75rem;
-      border-bottom-color: #750D2F;
+      border-bottom-color: #750d2f;
     }
   }
 
   .card-button:active {
     gap: 0.75rem;
-    border-bottom-color: #750D2F;
+    border-bottom-color: #750d2f;
   }
 </style>

@@ -1,16 +1,29 @@
 ---
+
 ---
 
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-content">
       <div class="footer-branding">
-        <span class="footer-tijuana">TIJUANA</span>
-        <span class="footer-ayuntamiento">XXV Ayuntamiento 2024 - 2027</span>
+        <img
+          src="/logo-blanco.svg"
+          alt="XXV Ayuntamiento de Tijuana - Mejora Regulatoria"
+          class="logo-image"
+          width="200"
+          height="80"
+          loading="eager"
+          decoding="async"
+        />
       </div>
       <nav class="footer-links" aria-label="Enlaces legales">
-        <a href="#" class="footer-link">Aviso de Privacidad</a>
-        <a href="#" class="footer-link">Transparencia</a>
+        <a
+          href="https://transparencia.tijuana.gob.mx/aviso_de_privacidad.aspx"
+          class="footer-link">Aviso de Privacidad</a
+        >
+        <a href="https://transparencia.tijuana.gob.mx/" class="footer-link"
+          >Transparencia</a
+        >
       </nav>
       <p class="footer-copyright">© Todos los derechos reservados.</p>
     </div>
@@ -19,8 +32,9 @@
 
 <style>
   .footer {
-    padding: 5rem 1.5rem;
-    border-top: 1px solid #E5E7EB;
+    padding: 1rem 2rem;
+    border-top: 1px solid #e5e7eb;
+    background-color: #750d2f;
   }
 
   .footer-container {
@@ -52,13 +66,13 @@
     font-weight: 900;
     letter-spacing: -0.05em;
     line-height: 1;
-    color: #121212;
+    color: #383838;
   }
 
   .footer-ayuntamiento {
     font-size: 10px;
     font-weight: 700;
-    color: #BA945C;
+    color: #ba945c;
     text-transform: uppercase;
     letter-spacing: 0.3em;
     margin-top: 0.25rem;
@@ -75,20 +89,32 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #9ca3af;
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s;
   }
 
   .footer-link:hover {
-    color: #750D2F;
+    color: #ba945c;
   }
 
   .footer-copyright {
     font-size: 10px;
     font-weight: 700;
-    color: #d1d5db;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+  }
+
+  .logo-image {
+    height: 3rem;
+    width: auto;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .logo-image {
+      height: 2.5rem;
+    }
   }
 </style>

@@ -1,19 +1,64 @@
 ---
-import FAQSchema from './FAQSchema.astro';
+import FAQSchema from "./FAQSchema.astro";
 
 const faqs = [
   {
-    question: '¿Qué es un trámite?',
-    answer: 'Gestión que debe realizar una persona ante una dependencia municipal para obtener un derecho, autorización o servicio.'
+    question: "¿Qué es un trámite?",
+    answer:
+      "Es la gestión que realizas ante el Municipio para obtener una licencia, permiso, autorización o cumplir una obligación establecida en una norma.",
   },
   {
-    question: '¿Qué hago si me piden requisitos no publicados?',
-    answer: 'Puedes presentar una Protesta Ciudadana directamente en esta plataforma.'
+    question: "¿Qué es un servicio?",
+    answer:
+      "Es una actividad que realiza el Municipio para atender una necesidad de la población, como orientación, atención ciudadana o prestación de servicios públicos.",
   },
   {
-    question: '¿Todos los trámites serán digitales?',
-    answer: 'El Municipio avanza gradualmente hacia la digitalización total conforme a la Ley Nacional para Eliminar Trámites Burocráticos.'
-  }
+    question: "¿Dónde puedo consultar los requisitos oficiales de un trámite?",
+    answer:
+      "Puedes consultar los requisitos oficiales en el Registro Municipal de Trámites y Servicios (REMUTYS) en https://remutys.agenciadigitaltj.gob.mx/. Conforme a la Ley Nacional para Eliminar Trámites Burocráticos, las dependencias solo pueden solicitar los requisitos que estén publicados en este registro.",
+  },
+  {
+    question: "¿Pueden pedirme requisitos que no estén publicados?",
+    answer:
+      "No. Las dependencias únicamente pueden solicitar los requisitos oficialmente registrados y publicados en el REMUTYS.",
+  },
+  {
+    question:
+      "¿Qué hago si me piden requisitos adicionales o me condicionan el trámite?",
+    answer:
+      "Puedes presentar una queja ante la Sindicatura Municipal en http://sindicatura.gob.mx/ en la opción 'Quejas' o 'Denunciar', según corresponda. Conserva evidencia como nombre del servidor público, fecha y requisitos solicitados.",
+  },
+  // {
+  //   question:
+  //     "¿El Municipio puede pedirme documentos que ya obran en otra dependencia?",
+  //   answer:
+  //     "No debería. La Ley Nacional promueve que las dependencias compartan información entre sí para evitar que tengas que presentar documentos repetidos.",
+  // },
+  {
+    question: "¿Qué significa que un trámite esté digitalizado?",
+    answer:
+      "Que puedes realizarlo en línea sin acudir físicamente, incluyendo solicitud, pago y seguimiento, cuando el trámite esté habilitado digitalmente.",
+  },
+  {
+    question: "¿Todos los trámites serán digitales?",
+    answer:
+      "La Ley Nacional impulsa la digitalización progresiva de los trámites. Sin embargo, deben mantenerse opciones presenciales para garantizar accesibilidad e inclusión.",
+  },
+  {
+    question: "¿Qué es un folio y por qué es importante?",
+    answer:
+      "Es el número que identifica tu trámite o solicitud. Permite dar seguimiento, consultar el estatus y garantizar transparencia.",
+  },
+  {
+    question: "¿Existen plazos máximos de respuesta?",
+    answer:
+      "Sí. Los trámites deben tener tiempos de resolución claros y publicados en el REMUTYS. Si no se cumple el plazo sin justificación, puedes presentar una queja.",
+  },
+  {
+    question: "¿Cómo puedo participar en la mejora de los trámites?",
+    answer:
+      "Puedes participar cuando el Municipio publique consultas públicas sobre nuevas regulaciones o simplificación de trámites, conforme a la Ley Nacional.",
+  },
 ];
 ---
 
@@ -25,52 +70,54 @@ const faqs = [
       <h2 class="faq-title">Preguntas Frecuentes</h2>
     </div>
     <div class="faq-list">
-      {faqs.map((faq) => (
-        <div class="faq-item">
-          <button class="faq-question" data-faq-button>
-            <span class="question-text">{faq.question}</span>
-            <span class="question-icon">+</span>
-          </button>
-          <div class="faq-answer" data-faq-answer>
-            <div class="faq-answer-content">
-              <p>{faq.answer}</p>
+      {
+        faqs.map((faq) => (
+          <div class="faq-item">
+            <button class="faq-question" data-faq-button>
+              <span class="question-text">{faq.question}</span>
+              <span class="question-icon">+</span>
+            </button>
+            <div class="faq-answer" data-faq-answer>
+              <div class="faq-answer-content">
+                <p>{faq.answer}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
 
 <script>
-  const faqButtons = document.querySelectorAll('[data-faq-button]');
-  
-  faqButtons.forEach(button => {
-    button.addEventListener('click', () => {
+  const faqButtons = document.querySelectorAll("[data-faq-button]");
+
+  faqButtons.forEach((button) => {
+    button.addEventListener("click", () => {
       const faqItem = button.parentElement;
-      const answer = faqItem?.querySelector('[data-faq-answer]');
-      const content = answer?.querySelector('.faq-answer-content');
-      const icon = button.querySelector('.question-icon');
-      
+      const answer = faqItem?.querySelector("[data-faq-answer]");
+      const content = answer?.querySelector(".faq-answer-content");
+      const icon = button.querySelector(".question-icon");
+
       if (answer && icon && content && answer instanceof HTMLElement) {
-        const isOpen = answer.classList.contains('open');
-        
+        const isOpen = answer.classList.contains("open");
+
         // Cerrar todas las respuestas
-        document.querySelectorAll('[data-faq-answer]').forEach(a => {
+        document.querySelectorAll("[data-faq-answer]").forEach((a) => {
           if (a instanceof HTMLElement) {
-            a.classList.remove('open');
-            a.style.height = '0';
+            a.classList.remove("open");
+            a.style.height = "0";
           }
         });
-        document.querySelectorAll('.question-icon').forEach(i => {
-          i.classList.remove('rotated');
+        document.querySelectorAll(".question-icon").forEach((i) => {
+          i.classList.remove("rotated");
         });
-        
+
         // Abrir la respuesta actual si estaba cerrada
         if (!isOpen) {
-          answer.classList.add('open');
-          answer.style.height = content.scrollHeight + 'px';
-          icon.classList.add('rotated');
+          answer.classList.add("open");
+          answer.style.height = content.scrollHeight + "px";
+          icon.classList.add("rotated");
         }
       }
     });
@@ -80,7 +127,7 @@ const faqs = [
 <style>
   .faq-section {
     padding: 8rem 1.5rem;
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid #e5e7eb;
   }
 
   .faq-container {
@@ -97,7 +144,7 @@ const faqs = [
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #BA945C;
+    color: #ba945c;
     margin-bottom: 1rem;
   }
 
@@ -111,7 +158,7 @@ const faqs = [
     font-size: 2.25rem;
     font-weight: 900;
     letter-spacing: -0.03em;
-    color: #121212;
+    color: #383838;
     margin-bottom: 1rem;
   }
 
@@ -128,11 +175,11 @@ const faqs = [
   }
 
   .faq-item {
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid #e5e7eb;
   }
 
   .faq-item:first-child {
-    border-top: 1px solid #E5E7EB;
+    border-top: 1px solid #e5e7eb;
   }
 
   .faq-question {
@@ -162,7 +209,7 @@ const faqs = [
   .question-text {
     font-size: 1.125rem;
     font-weight: 900;
-    color: #121212;
+    color: #383838;
     line-height: 1.4;
   }
 
@@ -174,7 +221,7 @@ const faqs = [
 
   .question-icon {
     font-size: 1.5rem;
-    color: #750D2F;
+    color: #750d2f;
     font-weight: 400;
     flex-shrink: 0;
     transition: transform 0.3s ease;
