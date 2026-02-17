@@ -129,6 +129,7 @@ import MobileMenuButton from "./MobileMenuButton.astro";
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     border-bottom: 1px solid transparent;
+    overflow: hidden;
   }
 
   .header.scrolled {
@@ -226,9 +227,9 @@ import MobileMenuButton from "./MobileMenuButton.astro";
   }
 
   .header.scrolled .nav-pill {
-    background: none;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid transparent; /* mantiene ancho */
     box-shadow: none;
-    border: none;
   }
 
   .nav-link {

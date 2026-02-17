@@ -7,14 +7,11 @@
     <div class="hero-content">
       <div class="hero-text-block">
         <div class="hero-overline">
-          <span class="overline-line"></span>
+          <!-- <span class="overline-line"></span> -->
           <span class="overline-text">Mejora Regulatoria</span>
         </div>
 
-        <h1 class="hero-title">
-          Más transparencia <span class="highlight"
-            >mejores decisiones públicas</span
-          >
+        <h1 class="hero-title">Más transparencia <span class="highlight">mejores decisiones públicas</span>
         </h1>
 
         <p class="hero-description">
@@ -49,6 +46,7 @@
     padding-right: 1.5rem;
     background-color: #ffffff;
     position: relative;
+    overflow: hidden;
   }
 
   @media (min-width: 768px) {
@@ -135,6 +133,7 @@
   .hero-overline {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     margin-bottom: 2rem;
   }
@@ -154,6 +153,9 @@
   }
 
   @media (min-width: 768px) {
+    .hero-overline {
+      justify-content:start;  
+    }
     .overline-text {
       font-size: 1rem;
     }
@@ -209,9 +211,17 @@
 
   .legislation-image {
     width: 100%;
-    max-width: 500px;
+    max-width: 200px;
     height: auto;
     object-fit: contain;
   }
+
+  @media (min-width: 768px) {
+    .legislation-image {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  
 
 </style>
